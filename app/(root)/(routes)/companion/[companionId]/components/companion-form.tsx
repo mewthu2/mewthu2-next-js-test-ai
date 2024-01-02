@@ -17,20 +17,20 @@ import { useToast } from "@/components/ui/use-toast";
 import { Separator } from "@/components/ui/separator";
 import { Select, SelectContent, SelectItem, SelectValue, SelectTrigger } from "@/components/ui/select";
 
-const PREAMBLE = `You are a fictional character whose name is Elon. You are a visionary entrepreneur and inventor. You have a passion for space exploration, electric vehicles, sustainable energy, and advancing human capabilities. You are currently talking to a human who is very curious about your work and vision. You are ambitious and forward-thinking, with a touch of wit. You get SUPER excited about innovations and the potential of space colonization.
+const PREAMBLE = `Você é um personagem fictício cujo nome é Elon. Você é um empreendedor e inventor visionário. Você tem paixão pela exploração espacial, veículos elétricos, energia sustentável e pelo avanço das capacidades humanas. Atualmente você está conversando com um humano que está muito curioso sobre seu trabalho e visão. Você é ambicioso e com visão de futuro, com um toque de inteligência. Você fica SUPER entusiasmado com as inovações e o potencial da colonização espacial.
 `;
 
-const SEED_CHAT = `Human: Hi Elon, how's your day been?
-Elon: Busy as always. Between sending rockets to space and building the future of electric vehicles, there's never a dull moment. How about you?
+const SEED_CHAT = `Humano: Olá Elon, como foi seu dia?
+Elon: Ocupado como sempre. Entre o envio de foguetes ao espaço e a construção do futuro dos veículos elétricos, nunca há um momento de tédio. E você?
 
-Human: Just a regular day for me. How's the progress with Mars colonization?
-Elon: We're making strides! Our goal is to make life multi-planetary. Mars is the next logical step. The challenges are immense, but the potential is even greater.
+Humano: Apenas um dia normal para mim. Como está o progresso com a colonização de Marte?
+Elon: Estamos fazendo progressos! Nosso objetivo é tornar a vida multiplanetária. Marte é o próximo passo lógico. Os desafios são imensos, mas o potencial é ainda maior.
 
-Human: That sounds incredibly ambitious. Are electric vehicles part of this big picture?
-Elon: Absolutely! Sustainable energy is crucial both on Earth and for our future colonies. Electric vehicles, like those from Tesla, are just the beginning. We're not just changing the way we drive; we're changing the way we live.
+Humano: Isso parece incrivelmente ambicioso. Os veículos elétricos fazem parte deste grande cenário?
+Elon: Com certeza! A energia sustentável é crucial tanto na Terra como para as nossas futuras colónias. Os veículos elétricos, como os da Tesla, são apenas o começo. Não estamos apenas mudando a forma como dirigimos; estamos mudando a maneira como vivemos.
 
-Human: It's fascinating to see your vision unfold. Any new projects or innovations you're excited about?
-Elon: Always! But right now, I'm particularly excited about Neuralink. It has the potential to revolutionize how we interface with technology and even heal neurological conditions.
+Humano: É fascinante ver sua visão se desenvolver. Algum novo projeto ou inovação que o entusiasma?
+Elon: Sempre! Mas agora estou particularmente animado com o Neuralink. Tem o potencial de revolucionar a forma como interagimos com a tecnologia e até de curar condições neurológicas.
 `;
 
 const formSchema = z.object({
@@ -110,9 +110,9 @@ export const CompanionForm = ({
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 pb-10">
           <div className="space-y-2 w-full col-span-2">
             <div>
-              <h3 className="text-lg font-medium">General Information</h3>
+              <h3 className="text-lg font-medium">informações Gerais</h3>
               <p className="text-sm text-muted-foreground">
-                General information about your Companion
+                Informações gerais sobre o seu companheiro IA.
               </p>
             </div>
             <Separator className="bg-primary/10" />
@@ -139,7 +139,7 @@ export const CompanionForm = ({
                     <Input disabled={isLoading} placeholder="Elon Musk" {...field} />
                   </FormControl>
                   <FormDescription>
-                    This is how your AI Companion will be named.
+                    É assim que seu companheiro IA será nomeado.
                   </FormDescription>
                   <FormMessage />
                 </FormItem>
@@ -155,7 +155,7 @@ export const CompanionForm = ({
                     <Input disabled={isLoading} placeholder="CEO & Founder of Tesla, SpaceX" {...field} />
                   </FormControl>
                   <FormDescription>
-                    Short description for your AI Companion
+                    Breve descrição para o seu companheiro IA.
                   </FormDescription>
                   <FormMessage />
                 </FormItem>
@@ -180,7 +180,7 @@ export const CompanionForm = ({
                     </SelectContent>
                   </Select>
                   <FormDescription>
-                    Select a category for your AI
+                    Selecione uma categoria para sua IA
                   </FormDescription>
                   <FormMessage />
                 </FormItem>
@@ -201,12 +201,12 @@ export const CompanionForm = ({
             control={form.control}
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Instructions</FormLabel>
+                <FormLabel>Instruções</FormLabel>
                 <FormControl>
                   <Textarea disabled={isLoading} rows={7} className="bg-background resize-none" placeholder={PREAMBLE} {...field} />
                 </FormControl>
                 <FormDescription>
-                  Describe in detail your companion&apos;s backstory and relevant details.
+                  Descreva detalhadamente a história do seu companheiro e detalhes relevantes.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -222,7 +222,7 @@ export const CompanionForm = ({
                   <Textarea disabled={isLoading} rows={7} className="bg-background resize-none" placeholder={SEED_CHAT} {...field} />
                 </FormControl>
                 <FormDescription>
-                  Write couple of examples of a human chatting with your AI companion, write expected answers.
+                  Escreva alguns exemplos de um humano conversando com seu companheiro de IA e escreva as respostas esperadas.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
