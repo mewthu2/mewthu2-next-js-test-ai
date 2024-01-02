@@ -26,7 +26,7 @@ Features:
 ### Cloning the repository
 
 ```shell
-git clone https://github.com/AntonioErdeljac/next13-ai-saas.git
+git clone https://github.com/mewthu2/mewthu2-next-js-test-ai
 ```
 
 ### Install packages
